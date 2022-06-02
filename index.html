@@ -645,7 +645,7 @@
                   <div class="card-text">Advisors: <a href="https://faculty.iiit.ac.in/~mkrishna/" target="_blank" rel="noopener">Prof. Madhava Krishna</a>, <a href="https://www.iiit.ac.in/people/faculty/Harikumar/" rel="noopener" target="_blank">Dr. Hari Kandath</a> and <a href="https://ravika.github.io/" target="_blank" rel="noopener">Dr. Ravi Kiran S</a>
                       <br />We have developed a vision pipeline which uses UAVs
 to assess and extract important information from the buildings - such as Storey Heights, windows/storey count, plan shape and area of the façade, etc. using Computer Vision and Deep Learning algorithms.
-                      <br />Currently, we are working on modules like distance between adjacent buildings crack detection, safety index formulation and we plan to include toppling/falling hazard and multi-class segmentation detection for roof-top objects and so on in our future work.
+                      <br />Currently, we are working on modules like distance between adjacent buildings crack detection, safety index formulation and we plan to include toppling/falling hazard and multi-class segmentation/detection for roof-top objects and so on in our future work.
                     <div class="btn-links">
                       <a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://github.com/Dhruv2012/Drone-based-building-assessment" target="_blank" rel="noopener">
                         Git Repo
@@ -654,7 +654,9 @@ to assess and extract important information from the buildings - such as Storey 
                   </div>
 
                   <div class="text-muted exp-meta"><b>DodgeDrone(ICRA 2022 Competition) - Vision-based Agile Drone Flight</b></div>
-                  <div class="card-text">Working on the intersection of Vision and RL to navigate UAVs in static/dynamic environments at high speeds, avoiding obstacles.</div>
+                  <div class="card-text">Working on the intersection of Vision and RL to navigate UAVs in static/dynamic environments at high speeds, avoiding obstacles.
+                    <br />Our formulation consists of a neural network which will predict the direction of motion, which will further be used to generate velocity commands using radial flow centered around this direction(or pixel). The entire pipeline will be optimized through an RL-based algorithm such as Proximal Policy Optimization(PPO).  
+                  </div>
                   <div class="text-muted exp-meta">  
                     Keywords:
                     <em>Robotics, Computer Vision, Deep Learning, Reinforcement Learning, 3D Reconstruction, UAVs</em>
