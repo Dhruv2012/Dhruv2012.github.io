@@ -134,7 +134,7 @@
             <br>
             We use Google Colab and a python3.8 setup and install the required dependencies. Ivy here is accessed using its API keys. 
             <br><newline><br>
-            <b>Ivy and GradSLAM Installation in Google Colab</b>
+            <b>Setting up pip</b>
             <!-- <code> -->
                 <br>
                 %pip install --upgrade pip <br>
@@ -159,6 +159,8 @@
                 !git clone https://github.com/unifyai/ivy.git <br>
                 !cd ivy && python3 -m pip install --user -e . <br>
             <!-- </code> -->
+                <br>
+                Now, <b>Restart the RunTime Environment</b> in Google Colab <br>
 
                 <br>
                 <b>Accessing Ivy's Compiler and Transpiler using the API Key</b> <br>
@@ -166,7 +168,18 @@
                 !mkdir -p .ivy <br>
                 !echo -n $API_KEY > .ivy/key.pem <br>
 
-                NOTE: You need to obtain the API key from the official website - <a href="https://unify.ai/"> Ivy</a>
+                NOTE: You need to obtain the API key from the official website - <a href="https://unify.ai/"> Ivy</a> <br>
+
+                <br>
+                <b>Verifying your installation</b> <br>
+                # GradSLAM <br>
+                import gradslam as gs <br>
+                print(gs.__version__)  #0.1.0<br>
+                <br>
+                # Ivy <br>
+                import ivy <br>
+                print(type(ivy.transpile))  #Should be "class function"<br>
+               
             <div class="article-tags">
                <a class="badge badge-light">Robotics</a>
                <a class="badge badge-light">Deep Learning</a>
@@ -180,7 +193,7 @@
                <img class="avatar mr-3 avatar-circle" src="/authors/admin/dhruv-1.jpg" alt="Dhruv Patel">
                <div class="media-body">
                   <h5 class="card-title"><a href="/">Dhruv Patel</a></h5>
-                  <h6 class="card-subtitle">>Research Associate, Robotics Research Centre, IIIT Hyderabad</h6>
+                  <h6 class="card-subtitle">MS Robotics, GeorgiaTech</h6>
                   <p class="card-text">My research interests include deep learning, robotics, AI Algorithms & Neuroscience.</p>
                   <ul class="network-icon" aria-hidden="true">
                      <li>
