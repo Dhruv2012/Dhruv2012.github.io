@@ -119,15 +119,24 @@
       <article class="article article-project">
       <div class="pub">
          <div class="article-container pt-3">
-            <a href="./gsoc23_logo.PNG" style="left: ;">
-                <img style="width:5%;max-width:5%" alt="profile photo" src="./gsoc23_logo.PNG" class="img-circle">
+            <a>
+               <img src="./ivy_gsoc_combined_logo.PNG" >
             </a>
-            <h1 style="text-align: center;">Google Summer of Code'23 @ Ivy (unify.ai)</h1>
+            <!-- <a href="./gsoc23_logo.PNG" style="left: ;"> -->
+            <!-- <br> -->
+            <!-- </a> -->
+            <!-- <h1 style="text-align: center;">GSoC'23 @ Ivy (unify.ai)</h1> -->
             <div class="article-metadata">
             </div>
          </div>
          <div class="article-container">
-            <h4 aria-setsize="", text-align: center;">Multi-backend framework support of GradSLAM in Ivy by implementing missing PyTorch APIs</h4>
+            <!-- <h4 aria-setsize="", text-align: center;">  -->
+            <h4 class="card-title exp-company my-0"> 
+               <center><b><a href="summerofcode.withgoogle.com" rel="noopener" target="_blank">Google Summer of Code'23</a></b> at <a href="https://unify.ai/" rel="noopener" target="_blank"><b>Ivy (unify.ai)</b>  </a></center>
+               <center>on</center>
+               <center><b>"Multi-backend framework support of GradSLAM in Ivy by implementing missing PyTorch APIs"</b>
+               </center>
+            </h4>
             <br>
 
             <h4>
@@ -141,6 +150,7 @@
                <li>Showcase better runtime performance of GradSLAM using JAX as the backend framework.</li>
             </p>
             
+            Frameworks (to be supported) - PyTorch, Tensorflow, JAX, NumPy
             <h4>
                <a href="setup.html">Installing and Setting up your environment</a>
             </h4>
@@ -149,11 +159,29 @@
             <h4>
                <a href="https://gradslam.readthedocs.io" rel="noopener" target="_blank">About GradSLAM</a>
             </h4>
-
+            
+            <img src="./gradslam_library_overview.PNG">
+            
+            <p>
+               As shown above, the GradSLAM library consists of different modules. We show that only framework-specific or logic containing modules (geometry, structures, odometry, SLAM) require transpilation. 
+            </p>
             <br>
-            A Jupyter Notebook for ease-of-deployment
 
-            Inference time analysis
+            <h4>
+               API-level Documentation - Ivy Transpilation
+            </h4>
+            <a href="https://docs.google.com/spreadsheets/d/1RCesF-hCuu_QT7AhaQsnNoJxnjswaLI8M-EqEZVaQyc/edit?usp=sharing" target="_blank" rel="noopener">Spreadsheet</a> - Documentation of GradSLAM APIs testing for all frameworks. Comprises failures, their resolved PRs and checklist of all the APIs. 
+
+            <h4>
+               GradSLAM using Ivy
+            </h4>
+            A <a href="https://colab.research.google.com/drive/1NHXTCn2NCiUiu-cd-fKM_i9YyzQSz_GA#scrollTo=2SZf5_rLUJLX" target="_blank" rel="noopener">Jupyter Notebook</a> for testing GradSLAM with different frameworks using Ivy.
+            
+            
+            <br>
+            <b>NOTE:</b> The above notebook still has some required core dependencies on Ivy side, and is being worked upon by the official Ivy team. I will update the same here once the required Ivy dependencies/features are available on their repo and then this notebook can be used directly. 
+            
+            <br> <br>Inference time analysis
             <div class="article-tags">
                <a class="badge badge-light">Robotics</a>
                <a class="badge badge-light">Deep Learning</a>
@@ -163,7 +191,7 @@
                <a class="badge badge-light">Tensorflow</a>
                <a class="badge badge-light">JAX</a>
             </div>
-            <div class="media author-card content-widget-hr">
+            <!-- <div class="media author-card content-widget-hr">
                <img class="avatar mr-3 avatar-circle" src="/authors/admin/dhruv-1.jpg" alt="Dhruv Patel">
                <div class="media-body">
                   <h5 class="card-title"><a href="/">Dhruv Patel</a></h5>
@@ -197,7 +225,7 @@
                      </li>
                   </ul>
                </div>
-            </div>
+            </div> -->
          </div>
       </div>
       </article>
