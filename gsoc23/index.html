@@ -168,9 +168,42 @@
             <br>
 
             <h4>
-               API-level Documentation - Ivy Transpilation
+               GradSLAM modules
             </h4>
-            <a href="https://docs.google.com/spreadsheets/d/1RCesF-hCuu_QT7AhaQsnNoJxnjswaLI8M-EqEZVaQyc/edit?usp=sharing" target="_blank" rel="noopener">Spreadsheet</a> - Documentation of GradSLAM APIs testing for all frameworks. Comprises failures, their resolved PRs and checklist of all the APIs. 
+            <b>1.) gradslam.geometry:</b> <a href="https://colab.research.google.com/drive/1VgAmUwO7XtL1U5irnfhfc2mERCSUSNmJ?usp=sharing"> [Jupyter Notebook] </a>
+            <br>
+            An example of transpiling a geometry API is shown below:
+               <center><img src="./gradslam_geometry_basic_example.PNG" width="60%" class="center"></center>
+            <br>
+            <div markdown="1">
+               Here, param <b><i>to</i></b> in <b><i>ivy.transpile</i></b> can be set to any of <b><i>["torch", "tensorflow", "jax", "numpy"]</i></b>
+            </div>
+            
+            <br>
+            <b>NOTE:</b> <b><i>se3utils</b></i> submodule in <b><i>geometry</i></b> has APIs - <b><i>[so3_hat, se3_hat]</i></b> (more details in <a href="https://docs.google.com/spreadsheets/d/1RCesF-hCuu_QT7AhaQsnNoJxnjswaLI8M-EqEZVaQyc/edit?usp=sharing" target="_blank" rel="noopener">Spreadsheet</a>), which fail due to <b><i>torch.zeros</i></b> transpilation issue in Ivy's graph compiler. This will be available soon once fixed on Ivy's official repo.
+
+            <br>
+            <br>
+            <b>2.) gradslam.odometry:</b> <a href="https://colab.research.google.com/drive/1MNT0VVYON5LOYPg-I6TypkTTW2ZSt2_y?usp=sharing"> [Jupyter Notebook] </a>
+            <br>
+            Contains Transpilation tests for both - high-level logic of ICP in form of classes and low-level util functions (gauss_newton_solve, solve_linear_system, downsampling, etc.).
+            <br><br>
+            <b>NOTE:</b> Few APIs like <b><i>solve_linear_system</i></b> have been successfully tested. The transpilation test for the remaining APIs are already available, but they require some additional core dev and fixes (<b><i>torch.inv JAX transpilation</i></b>, <b><i>Class Transpilation support</i></b>, and <b><i>key error issue</i></b>) in Ivy's official repo.
+
+            <br><br>
+            <b>3.) gradslam.structures:</b> <a href="https://colab.research.google.com/drive/1ceu_VVQc0I1QUHJ7g_VNa5_v-FXij3a4?usp=sharing"> [Jupyter Notebook] </a>
+            <br>
+
+            <br>
+            <b>4.) gradslam.slam:</b> <a href="https://colab.research.google.com/drive/1uaO-lRlnxcxPqpj-D3aZZ6zqqNiw-N_Z?usp=sharing"> [Jupyter Notebook] </a>
+            <br>
+            Similar to <b><i>gradslam.odometry</i></b>
+
+
+            <h4>
+               Ivy Transpilation: API-level Documentation
+            </h4>
+            <a href="https://docs.google.com/spreadsheets/d/1RCesF-hCuu_QT7AhaQsnNoJxnjswaLI8M-EqEZVaQyc/edit?usp=sharing" target="_blank" rel="noopener">Spreadsheet</a> - Documentation of GradSLAM APIs testing for all frameworks. Comprises failures, PRs for resolving them and checklist of all the APIs. 
 
             <h4>
                GradSLAM using Ivy
@@ -181,7 +214,11 @@
             <br>
             <b>NOTE:</b> The above notebook still has some required core dependencies on Ivy side, and is being worked upon by the official Ivy team. I will update the same here once the required Ivy dependencies/features are available on their repo and then this notebook can be used directly. 
             
-            <br> <br>Inference time analysis
+            <br>
+            <h4>Conclusion</h4>
+            <li>Transpilation tests for all GradSLAM APIs are developed.</li>
+            <li>Most Low-level APIs are already tested successfully, and the remaining tests for high-level class logic are already developed and will be tested once we have class transpilation and other fixes like torch.zeros, torch.inv APIs in Ivy's graph compiler.
+            <li>We will perform the final Inference time analysis of using GradSLAM with different frameworks soon.</li>
             <div class="article-tags">
                <a class="badge badge-light">Robotics</a>
                <a class="badge badge-light">Deep Learning</a>
