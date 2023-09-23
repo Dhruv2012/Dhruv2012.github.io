@@ -201,7 +201,7 @@
             <div class="article-container">  
                 <div class="article-style">
                     <h3>Description</h3>
-                    <p>We train ResNet with single instances of RGB images to predict traversable paths for a UAV. The images, obtained from the <a href="https://uzh-rpg.github.io/icra2022-dodgedrone/">DodgeDrone Simulation</a> environment, were labelled in self-supervised way by taking the maximum average depth of the patch as a criterion. The model was fed with positive examples of obstacle-free patches (in green).</p>
+                    <p>We train ResNet with single instances of RGB images to predict traversable paths for a UAV. The images, obtained from the <a href="https://uzh-rpg.github.io/icra2022-dodgedrone/">DodgeDrone Simulation</a> environment, were labelled in self-supervised way by taking the maximum average depth of the patch as a criterion. The model was fed with positive examples of obstacle-free patches (in green), and the idea here is to avoid obstacles during navigation by moving the UAV towards the center of the predicted patch (in red).</p>
                     <p>The motivation here is to utilize these self-supervised labels and learn a good initial estimate for optimal policies, avoiding resouce-intensive trials.</p>
                     <p>Ongoing and future works include the following:
                     <ul>
